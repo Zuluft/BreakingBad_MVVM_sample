@@ -24,7 +24,7 @@ abstract class BaseActivity<ViewState, ViewModel : BaseViewModel<ViewState>> :
         }
         renderView(savedInstanceState)
         viewModel = provideViewModel()
-        viewModel.getViewState()
+        viewModel.getLiveViewState()
             .observe(this,
                 Observer {
                     reflectState(it)

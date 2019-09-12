@@ -78,7 +78,7 @@ abstract class BaseFragment<ViewState, ViewModel : BaseViewModel<ViewState>> :
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = provideViewModel()
-        viewModel.getViewState()
+        viewModel.getLiveViewState()
             .observe(viewLifecycleOwner,
                 Observer {
                     reflectState(it)
