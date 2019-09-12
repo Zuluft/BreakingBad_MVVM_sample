@@ -45,4 +45,12 @@ abstract class BaseActivity<ViewState, ViewModel : BaseViewModel<ViewState>> :
         compositeDisposable!!.addAll(*disposables)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        if (compositeDisposable != null) {
+            compositeDisposable!!.dispose()
+            compositeDisposable!!.clear()
+        }
+    }
+
 }
