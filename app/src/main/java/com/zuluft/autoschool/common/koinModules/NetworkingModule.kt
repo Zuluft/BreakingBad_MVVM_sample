@@ -7,6 +7,7 @@ import com.zuluft.autoschool.domain.dataProviders.global.GlobalDataProvider
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.qualifier.named
+import org.koin.dsl.bind
 import org.koin.dsl.module
 import retrofit2.CallAdapter
 import retrofit2.Converter
@@ -26,13 +27,13 @@ val networkingModule = module {
             .create()
     }
 
-    single<Converter.Factory> {
+    single {
         GsonConverterFactory.create(get())
-    }
+    } bind Converter.Factory::class
 
-    single<CallAdapter.Factory> {
+    single {
         RxJava2CallAdapterFactory.create()
-    }
+    } bind CallAdapter.Factory::class
 
     single {
         OkHttpClient.Builder()

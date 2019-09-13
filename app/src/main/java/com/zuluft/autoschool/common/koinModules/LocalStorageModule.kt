@@ -6,6 +6,7 @@ import com.zuluft.autoschool.domain.dataProviders.local.LocalDataProvider
 import com.zuluft.autoschool.domain.dataProviders.local.LocalDataProviderImpl
 import com.zuluft.autoschool.domain.dataProviders.local.database.Database
 import org.koin.android.ext.koin.androidContext
+import org.koin.dsl.bind
 import org.koin.dsl.module
 
 
@@ -16,10 +17,10 @@ val localStorageModule = module {
     }
 
     single {
-        Room.databaseBuilder(androidContext(), Database::class.java, "database")
-    }
+        Room.databaseBuilder(androidContext(), Database::class.java, "database").build()
+    } bind Database::class
 
-    single<LocalDataProvider> {
+    single {
         LocalDataProviderImpl(get(), get())
-    }
+    } bind LocalDataProvider::class
 }

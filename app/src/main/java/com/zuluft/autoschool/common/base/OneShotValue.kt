@@ -1,6 +1,6 @@
 package com.zuluft.autoschool.common.base
 
-class TransientValue<T> constructor(private var value: T) {
+class OneShotValue<T>(private val value: T) {
 
     private var isAlreadyUsed: Boolean = false
 
@@ -8,6 +8,7 @@ class TransientValue<T> constructor(private var value: T) {
         return if (isAlreadyUsed) {
             null
         } else {
+            isAlreadyUsed = true
             value
         }
     }

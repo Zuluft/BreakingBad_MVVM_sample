@@ -12,18 +12,18 @@ data class CharacterModel(
     val id: Int,
     @SerializedName("name")
     val name: String,
-    @SerializedName("birthday")
-    val birthday: Date,
-    @SerializedName("occupation")
-    val occupation: List<String>,
+//    @SerializedName("birthday")
+//    val birthday: Date,
+//    @SerializedName("occupation")
+//    val occupation: List<String>,
     @SerializedName("img")
     val image: String,
     @SerializedName("status")
     val status: String,
     @SerializedName("nickname")
     val nickname: String,
-    @SerializedName("appearance")
-    val appearance: List<Int>,
+//    @SerializedName("appearance")
+//    val appearance: List<Int>,
     @SerializedName("portrayed")
     val portrayed: String
 )
