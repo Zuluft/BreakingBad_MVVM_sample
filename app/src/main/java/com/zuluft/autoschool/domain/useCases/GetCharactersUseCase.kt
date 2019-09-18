@@ -8,7 +8,7 @@ import com.zuluft.autoschool.domain.repository.Repository
 
 class GetCharactersUseCase(repository: Repository) :
     BaseUseCase<Unit, DataSource.Factory<Int, CharacterModel>>(repository) {
-    override fun createObservable(arg: Unit?): DataSource.Factory<Int, CharacterModel> {
+    override fun start(arg: Unit?): DataSource.Factory<Int, CharacterModel> {
         return repository.getCharacters()
     }
 }

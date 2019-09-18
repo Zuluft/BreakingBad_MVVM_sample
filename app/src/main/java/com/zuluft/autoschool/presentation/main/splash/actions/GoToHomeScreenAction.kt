@@ -1,12 +1,12 @@
 package com.zuluft.autoschool.presentation.main.splash.actions
 
-import com.zuluft.autoschool.common.base.OneShotValue
-import com.zuluft.autoschool.common.base.ViewStateAction
 import com.zuluft.autoschool.presentation.main.splash.SplashViewState
+import com.zuluft.mvvm.actions.ViewStateAction
+import com.zuluft.mvvm.models.DisposableValue
 
 class GoToHomeScreenAction :
     ViewStateAction<SplashViewState> {
     override fun newState(oldState: SplashViewState): SplashViewState {
-        return oldState.copy(goToHomeScreen = OneShotValue(true))
+        return oldState.copy(goToHomeScreen = DisposableValue(true))
     }
 }

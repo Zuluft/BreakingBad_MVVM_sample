@@ -3,9 +3,9 @@ package com.zuluft.autoschool.presentation.main.splash
 import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import com.zuluft.autoschool.R
-import com.zuluft.autoschool.common.annotations.LayoutResId
-import com.zuluft.autoschool.common.base.BaseFragment
 import com.zuluft.autoschool.domain.models.dataModels.HomeScreenDataModel
+import com.zuluft.mvvm.common.LayoutResId
+import com.zuluft.mvvm.fragments.BaseFragment
 import org.koin.android.viewmodel.ext.android.viewModel
 
 @LayoutResId(R.layout.fragment_splash)

@@ -1,28 +1,20 @@
 package com.zuluft.autoschool.app
 
-import android.app.Application
 import com.zuluft.autoschool.common.koinModules.*
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
+import com.zuluft.mvvm.app.MvvmApplication
+import org.koin.core.module.Module
 
 
-class App : Application() {
+class App : MvvmApplication() {
 
-
-    override fun onCreate() {
-        super.onCreate()
-        startKoin {
-            androidContext(this@App.applicationContext)
-            modules(
-                listOf(
-                    localStorageModule,
-                    networkingModule,
-                    repositoryModule,
-                    useCasesModule,
-                    viewModelModule
-                )
-            )
-        }
+    override fun provideModules(): List<Module> {
+        return listOf(
+            localStorageModule,
+            networkingModule,
+            repositoryModule,
+            useCasesModule,
+            viewModelModule
+        )
     }
 
 }

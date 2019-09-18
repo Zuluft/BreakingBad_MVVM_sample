@@ -9,7 +9,7 @@ import io.reactivex.Observable
 class FetchCharactersUseCase
     (repository: Repository) :
     BaseUseCase<PageDataModel, Observable<List<CharacterModel>>>(repository) {
-    override fun createObservable(arg: PageDataModel?): Observable<List<CharacterModel>> {
+    override fun start(arg: PageDataModel?): Observable<List<CharacterModel>> {
         return repository.fetchCharacters(arg!!)
     }
 }

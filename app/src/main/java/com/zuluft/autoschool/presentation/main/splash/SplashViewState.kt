@@ -1,7 +1,7 @@
 package com.zuluft.autoschool.presentation.main.splash
 
-import com.zuluft.autoschool.common.base.OneShotValue
+import com.zuluft.mvvm.models.DisposableValue
 
 data class SplashViewState(
-    val goToHomeScreen: OneShotValue<Boolean>
+    val goToHomeScreen: DisposableValue<Boolean>
 )

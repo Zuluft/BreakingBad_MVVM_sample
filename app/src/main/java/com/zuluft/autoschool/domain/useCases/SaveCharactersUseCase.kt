@@ -7,7 +7,7 @@ import io.reactivex.Observable
 
 class SaveCharactersUseCase(repository: Repository) :
     BaseUseCase<List<CharacterModel>, Observable<Boolean>>(repository) {
-    override fun createObservable(arg: List<CharacterModel>?): Observable<Boolean> {
+    override fun start(arg: List<CharacterModel>?): Observable<Boolean> {
         return repository.saveCharacters(arg!!)
     }
 }

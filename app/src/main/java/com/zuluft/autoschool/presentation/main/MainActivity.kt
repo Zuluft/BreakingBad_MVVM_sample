@@ -2,8 +2,8 @@ package com.zuluft.autoschool.presentation.main
 
 import android.os.Bundle
 import com.zuluft.autoschool.R
-import com.zuluft.autoschool.common.annotations.LayoutResId
-import com.zuluft.autoschool.common.base.BaseActivity
+import com.zuluft.mvvm.activities.BaseActivity
+import com.zuluft.mvvm.common.LayoutResId
 import org.koin.android.viewmodel.ext.android.viewModel
 
 @LayoutResId(R.layout.activity_main)

@@ -33,7 +33,7 @@ constructor(
     private fun getNewPage() {
         isLoading = true
         compositeDisposable.add(
-            fetchAndSaveCharactersUseCase.createObservable(PageDataModel(5, initialOffset))
+            fetchAndSaveCharactersUseCase.start(PageDataModel(5, initialOffset))
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
                 .subscribe {
