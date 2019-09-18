@@ -27,12 +27,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.github.Zuluft:MVVM_base_structure:0.92'
+    implementation 'com.github.Zuluft:MVVM_base_structure:0.94'
     kapt "androidx.room:room-compiler:2.1.0"
 
     implementation 'com.facebook.fresco:fresco:2.0.0'

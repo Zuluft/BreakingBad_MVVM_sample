@@ -7,7 +7,9 @@ import com.facebook.drawee.view.SimpleDraweeView
 import com.zuluft.autoschool.R
 import com.zuluft.autoschool.domain.models.CharacterModel
 
-class CharactersViewHolder(itemView: View) :
+class CharactersViewHolder(
+    itemView: View
+) :
     RecyclerView.ViewHolder(itemView) {
 
     private val tvCharName = itemView.findViewById<TextView>(R.id.tvCharName)

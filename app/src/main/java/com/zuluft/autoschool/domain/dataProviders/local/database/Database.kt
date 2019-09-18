@@ -4,14 +4,16 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.zuluft.autoschool.domain.dataProviders.local.database.daos.CharactersDao
 import com.zuluft.autoschool.domain.models.CharacterModel
+import com.zuluft.autoschool.domain.models.QuoteModel
 
 
 @Database(
     entities = [
-        CharacterModel::class
+        CharacterModel::class,
+        QuoteModel::class
     ],
     exportSchema = false,
-    version = 1
+    version = 2
 )
 abstract class Database :
     RoomDatabase() {

@@ -8,14 +8,35 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="homeFragment">
+                  <entry key="characterDetailsFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-330" />
-                            <option name="y" value="-146" />
+                            <option name="x" value="-229" />
+                            <option name="y" value="-96" />
                           </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="charactersListFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-441" />
+                            <option name="y" value="-98" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_charactersListFragment_to_characterDetailsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -25,12 +46,13 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-592" />
+                            <option name="x" value="-658" />
+                            <option name="y" value="-87" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_splashFragment_to_homeFragment">
+                            <entry key="action_splashFragment_to_charactersListFragment">
                               <value>
                                 <LayoutPositions />
                               </value>

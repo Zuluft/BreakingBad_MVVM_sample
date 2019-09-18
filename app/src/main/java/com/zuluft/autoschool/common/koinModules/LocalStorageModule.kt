@@ -17,7 +17,8 @@ val localStorageModule = module {
     }
 
     single {
-        Room.databaseBuilder(androidContext(), Database::class.java, "database").build()
+        Room.databaseBuilder(androidContext(), Database::class.java, "database")
+            .fallbackToDestructiveMigration().build()
     } bind Database::class
 
     single {

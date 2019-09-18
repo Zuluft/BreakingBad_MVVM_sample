@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import com.zuluft.autoschool.R
 import com.zuluft.autoschool.domain.models.CharacterModel
 
-class CharactersListPagedAdapter :
+class CharactersListPagedAdapter
+constructor(private val predicate: (CharacterModel) -> (Unit)) :
     PagedListAdapter<CharacterModel, CharactersViewHolder>(
         config
     ) {
@@ -17,13 +18,17 @@ class CharactersListPagedAdapter :
                 R.layout.item_character,
                 parent, false
             )
-        return CharactersViewHolder((view))
+        return CharactersViewHolder(view).apply {
+            itemView.setOnClickListener {
+                predicate.invoke(getItem(adapterPosition)!!)
+            }
+        }
     }
 
     override fun onBindViewHolder(holder: CharactersViewHolder, position: Int) {
-        val item= getItem(position)
-        if(item!=null)
-        holder.apply(item)
+        val item = getItem(position)
+        if (item != null)
+            holder.apply(item)
     }
 
     companion object {

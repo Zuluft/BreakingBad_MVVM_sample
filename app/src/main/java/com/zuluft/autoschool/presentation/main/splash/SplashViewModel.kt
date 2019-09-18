@@ -1,6 +1,5 @@
 package com.zuluft.autoschool.presentation.main.splash
 
-import com.zuluft.autoschool.domain.models.dataModels.CharactersListScreenDataModel
 import com.zuluft.autoschool.presentation.main.splash.actions.GoToHomeScreenAction
 import com.zuluft.mvvm.viewModels.BaseViewModel
 import io.reactivex.Observable
@@ -17,12 +16,7 @@ class SplashViewModel :
     init {
         registerDisposables(
             Observable.fromCallable {
-                GoToHomeScreenAction(
-                    CharactersListScreenDataModel(
-                        "zulufta",
-                        "imasavit"
-                    )
-                )
+                GoToHomeScreenAction()
             }
                 .delay(3, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.newThread())

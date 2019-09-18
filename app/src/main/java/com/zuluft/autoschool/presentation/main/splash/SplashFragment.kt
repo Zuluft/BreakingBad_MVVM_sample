@@ -10,15 +10,14 @@ import org.koin.android.viewmodel.ext.android.viewModel
 @LayoutResId(R.layout.fragment_splash)
 class SplashFragment :
     BaseFragment<SplashViewState, SplashViewModel>() {
+
     private val splashViewModel: SplashViewModel by viewModel()
 
     override fun reflectState(viewState: SplashViewState) {
         viewState.goToCharactersListScreen?.getValue()?.also {
             findNavController().navigate(
                 SplashFragmentDirections
-                    .actionSplashFragmentToCharactersListFragment(
-                        it
-                    )
+                    .actionSplashFragmentToCharactersListFragment()
             )
         }
     }

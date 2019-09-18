@@ -28,8 +28,23 @@
         android:name="com.zuluft.autoschool.presentation.main.charactersList.CharactersListFragment"
         android:label="CharactersListFragment"
         tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_charactersListFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/charactersListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.zuluft.autoschool.presentation.main.characterDetails.CharacterDetailsFragment"
+        android:label="CharacterDetailsFragment"
+        tools:layout="@layout/fragment_character_details">
         <argument
-            android:name="charactersListScreenDataModel"
-            app:argType="com.zuluft.autoschool.domain.models.dataModels.CharactersListScreenDataModel" />
+            android:name="characterDetailsDataModel"
+            app:argType="com.zuluft.autoschool.domain.models.dataModels.CharacterDetailsDataModel" />
     </fragment>
 </navigation>
