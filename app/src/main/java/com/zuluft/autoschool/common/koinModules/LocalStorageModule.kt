@@ -21,6 +21,6 @@ val localStorageModule = module {
     } bind Database::class
 
     single {
-        LocalDataProviderImpl(get(), get())
+        LocalDataProviderImpl(get())
     } bind LocalDataProvider::class
 }

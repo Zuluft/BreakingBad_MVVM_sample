@@ -35,4 +35,5 @@ dependencies {
     implementation 'com.github.Zuluft:MVVM_base_structure:0.92'
     kapt "androidx.room:room-compiler:2.1.0"
 
+    implementation 'com.facebook.fresco:fresco:2.0.0'
 }

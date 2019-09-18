@@ -1,7 +1,7 @@
 package com.zuluft.autoschool.presentation.main.splash
 
+import com.zuluft.autoschool.domain.models.dataModels.CharactersListScreenDataModel
 import com.zuluft.autoschool.presentation.main.splash.actions.GoToHomeScreenAction
-import com.zuluft.mvvm.models.DisposableValue
 import com.zuluft.mvvm.viewModels.BaseViewModel
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -11,13 +11,18 @@ import java.util.concurrent.TimeUnit
 class SplashViewModel :
     BaseViewModel<SplashViewState>() {
     override fun getInitialState(): SplashViewState {
-        return SplashViewState(DisposableValue(false))
+        return SplashViewState()
     }
 
     init {
         registerDisposables(
             Observable.fromCallable {
-                GoToHomeScreenAction()
+                GoToHomeScreenAction(
+                    CharactersListScreenDataModel(
+                        "zulufta",
+                        "imasavit"
+                    )
+                )
             }
                 .delay(3, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.newThread())

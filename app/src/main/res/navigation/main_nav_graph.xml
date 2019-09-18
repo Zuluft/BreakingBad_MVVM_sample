@@ -13,8 +13,8 @@
 
 
         <action
-            android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
+            android:id="@+id/action_splashFragment_to_charactersListFragment"
+            app:destination="@id/charactersListFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popUpTo="@id/splashFragment"
@@ -24,12 +24,12 @@
 
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.zuluft.autoschool.presentation.main.home.HomeFragment"
-        android:label="HomeFragment"
+        android:id="@+id/charactersListFragment"
+        android:name="com.zuluft.autoschool.presentation.main.charactersList.CharactersListFragment"
+        android:label="CharactersListFragment"
         tools:layout="@layout/fragment_home">
         <argument
-            android:name="homeScreenDataModel"
-            app:argType="com.zuluft.autoschool.domain.models.dataModels.HomeScreenDataModel" />
+            android:name="charactersListScreenDataModel"
+            app:argType="com.zuluft.autoschool.domain.models.dataModels.CharactersListScreenDataModel" />
     </fragment>
 </navigation>

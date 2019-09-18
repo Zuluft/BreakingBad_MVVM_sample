@@ -1,4 +1,4 @@
-package com.zuluft.autoschool.presentation.main.home
+package com.zuluft.autoschool.presentation.main.charactersList.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.DiffUtil
 import com.zuluft.autoschool.R
 import com.zuluft.autoschool.domain.models.CharacterModel
 
-class CharactersPagedAdapter :
-    PagedListAdapter<CharacterModel, CharactersViewHolder>(config) {
+class CharactersListPagedAdapter :
+    PagedListAdapter<CharacterModel, CharactersViewHolder>(
+        config
+    ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(

@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class HomeScreenDataModel(
+data class CharactersListScreenDataModel(
     val username: String,
     val password: String
 ) : Parcelable

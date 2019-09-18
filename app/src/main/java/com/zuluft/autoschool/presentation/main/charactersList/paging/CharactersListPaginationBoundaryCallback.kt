@@ -1,4 +1,4 @@
-package com.zuluft.autoschool.presentation.main.home
+package com.zuluft.autoschool.presentation.main.charactersList.paging
 
 import androidx.paging.PagedList
 import com.zuluft.autoschool.domain.models.CharacterModel
@@ -7,24 +7,25 @@ import com.zuluft.autoschool.domain.useCases.FetchAndSaveCharactersUseCase
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class BoundaryCallback
+class CharactersListPaginationBoundaryCallback
 constructor(
+    private val pageSize: Int,
+    private var offset: Int,
     private val compositeDisposable: CompositeDisposable,
     private val fetchAndSaveCharactersUseCase: FetchAndSaveCharactersUseCase
 ) :
     PagedList.BoundaryCallback<CharacterModel>() {
 
-    var initialOffset = 0
     var isLoading = false
 
     override fun onZeroItemsLoaded() {
-        if(!isLoading){
+        if (!isLoading) {
             getNewPage()
         }
     }
 
     override fun onItemAtEndLoaded(itemAtEnd: CharacterModel) {
-        if(!isLoading){
+        if (!isLoading) {
             getNewPage()
         }
     }
@@ -33,11 +34,11 @@ constructor(
     private fun getNewPage() {
         isLoading = true
         compositeDisposable.add(
-            fetchAndSaveCharactersUseCase.start(PageDataModel(5, initialOffset))
+            fetchAndSaveCharactersUseCase.start(PageDataModel(pageSize, offset))
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
                 .subscribe {
-                    initialOffset += 5
+                    offset += pageSize
                     isLoading = false
                 }
         )

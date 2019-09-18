@@ -9,8 +9,7 @@ import io.reactivex.Observable
 
 class LocalDataProviderImpl
 constructor(
-    private val database: Database,
-    private val globalDataProvider: GlobalDataProvider
+    private val database: Database
 ) :
     LocalDataProvider {
     override fun getCharacters(): DataSource.Factory<Int, CharacterModel> {
